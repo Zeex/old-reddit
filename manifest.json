@@ -2,14 +2,19 @@
     "manifest_version": 2,
     "name": "Old Reddit Redirector",
     "version": "1.0",
-    "description": "Redirects all visited Reddit pages to old.reddit.com (old version of the Reddit website)",
+    "description": "Redirects all visited Reddit pages to old.reddit.com (old version of the website)",
     "icons": {
-      "48": "icons/border-48.png"
+      "48": "icons/icon-48.png"
     },
-    "content_scripts": [
-      {
-        "matches": ["*://*.reddit.com/*"],
-        "js": ["redirector.js"]
-      }
-    ]
+    "permissions": [
+      "webRequest", "webRequestBlocking", "https://www.reddit.com/*"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "developer": {
+      "name": "Zeex",
+      "url": "https://zeex.github.io"
+    },
+    "homepage_url": "https://github.com/Zeex/old-reddit"
   }
